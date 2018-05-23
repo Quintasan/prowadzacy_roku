@@ -5,6 +5,7 @@ class Contest < ApplicationRecord
   validates :name, uniqueness: true
   has_many :entries, dependent: :destroy
   has_many :contestants, through: :entries
+  has_many :votes, dependent: :restrict_with_error
 
   aasm do
     state :inactive, initial: true

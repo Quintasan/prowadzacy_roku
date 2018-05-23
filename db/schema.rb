@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_164425) do
+ActiveRecord::Schema.define(version: 2018_05_23_165410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,20 @@ ActiveRecord::Schema.define(version: 2018_05_23_164425) do
     t.index ["contestant_id"], name: "index_entries_on_contestant_id"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string "token", null: false
+    t.boolean "cast", default: false, null: false
+    t.string "email", null: false
+    t.bigint "contest_id"
+    t.bigint "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contest_id"], name: "index_votes_on_contest_id"
+    t.index ["entry_id"], name: "index_votes_on_entry_id"
+  end
+
   add_foreign_key "entries", "contestants"
   add_foreign_key "entries", "contests"
+  add_foreign_key "votes", "contests"
+  add_foreign_key "votes", "entries"
 end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'aasm/rspec'
+
 RSpec.configure do |config|
   config.color = true
   config.tty = true

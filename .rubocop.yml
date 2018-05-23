@@ -1,0 +1,23 @@
+inherit_from:
+  - https://relaxed.ruby.style/rubocop.yml
+
+Rails:
+  Enabled: true
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.5
+  Exclude:
+    - db/schema.rb
+    - bin/spring
+    - bin/setup
+    - bin/update
+    - config/deploy.rb
+    - vendor/**/*
+
+BlockLength:
+  Exclude:
+    - "**/config/**/*.rb"
+
+StringLiterals:
+  EnforcedStyle: double_quotes

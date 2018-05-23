@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  host: <%= ENV.fetch("DATABASE_HOST") { nil } %>
+  port: <%= ENV.fetch("DATABASE_PORT") { nil } %>
+  user: <%= ENV.fetch("DATABASE_USER") { "prowadzacy_roku" } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { "prowadzacy_roku" } %>
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: prowadzacy_roku_development
+
+test:
+  <<: *default
+  database: prowadzacy_roku_test
+
+production:
+  <<: *default
+  database: prowadzacy_roku_production

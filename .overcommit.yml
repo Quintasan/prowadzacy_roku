@@ -1,0 +1,13 @@
+PreCommit:
+  RailsSchemaUpToDate:
+    enabled: true
+  Rubocop:
+    enabled: true
+  Fasterer:
+    enabled: true
+  BundlerAudit:
+    enabled: true
+  Brakeman:
+    enabled: true
+  RailsBestPractices:
+    enabled: true

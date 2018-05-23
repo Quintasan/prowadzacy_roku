@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_05_23_154832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contestants", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "surname", default: "", null: false
+    t.string "title", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "surname", "title"], name: "index_contestants_on_name_and_surname_and_title", unique: true
+  end
 
 end

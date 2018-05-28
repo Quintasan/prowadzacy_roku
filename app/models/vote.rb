@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Vote < ApplicationRecord
   validates :token, :email, presence: true
   belongs_to :contest

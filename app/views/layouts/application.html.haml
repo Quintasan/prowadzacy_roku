@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
+    %title Prowadzący Roku
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.box-shadow
+      %h5.my-0.mr-md-auto.font-weight-normal Company name
+      %nav.my-2.my-md-0.mr-md-3
+        %a.p-2.text-dark{:href => contests_path} Contents
+        %a.p-2.text-dark{:href => contestants_path} Contestants
+        %a.p-2.text-dark{:href => entries_path} Entries
+        %a.p-2.text-dark{:href => votes_path} Votes
+      %a.btn.btn-outline-primary{:href => "#"} Sign up
+    .container.mt-5
+      .col-md-9.offset-md-1
+        = yield

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Contestant < ApplicationRecord
   validates :name, :surname, :title, presence: true
   validates :name, uniqueness: { scope: %i[surname title] }

@@ -5,20 +5,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'aasm'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap', '~> 4.1.1'
 gem 'carrierwave'
 gem 'decent_exposure'
+gem 'dotenv-rails'
+gem 'hamlit'
+gem 'hamlit-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 gem 'mini_racer', platforms: :ruby
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'pundit'
 gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'dotenv-rails'
-gem 'aasm'
 
 group :development, :test do
   gem 'better_errors'

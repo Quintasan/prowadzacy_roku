@@ -1,0 +1,7 @@
+pl:
+  layouts:
+    application:
+      contests: Konkursy
+      contestants: Prowadzący
+      entries: Prowadzący w konkursach
+      votes: Głosy

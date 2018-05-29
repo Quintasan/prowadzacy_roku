@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_165410) do
+ActiveRecord::Schema.define(version: 2018_05_28_213905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 2018_05_23_165410) do
     t.index ["contest_id"], name: "index_entries_on_contest_id"
     t.index ["contestant_id", "contest_id"], name: "index_entries_on_contestant_id_and_contest_id", unique: true
     t.index ["contestant_id"], name: "index_entries_on_contestant_id"
+  end
+
+  create_table "fixtures", force: :cascade do |t|
+    t.jsonb "file_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", force: :cascade do |t|

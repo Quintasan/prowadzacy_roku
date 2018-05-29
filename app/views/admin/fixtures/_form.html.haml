@@ -1,0 +1,11 @@
+-# frozen_string_literal: true
+= simple_form_for(fixture) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :file, as: :hidden, input_html: { value: fixture.cached_file_data }
+    = f.input :file, as: :file
+
+  .form-actions
+    = f.button :submit

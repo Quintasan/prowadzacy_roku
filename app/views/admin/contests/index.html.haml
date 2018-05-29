@@ -1,0 +1,20 @@
+%h1 Listing contests
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - contests.each do |contest|
+      %tr
+        %td= contest.name
+        %td= link_to 'Show', admin_contest_path(contest)
+        %td= link_to 'Edit', edit_admin_contest_path(contest)
+        %td= link_to 'Destroy', admin_contest_path(contest), :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br
+
+= link_to 'New Contest', new_admin_contest_path

@@ -1,0 +1,23 @@
+%h1 Listing entries
+
+%table
+  %thead
+    %tr
+      %th Imię i nazwisko
+      %th Konkurs
+      %th
+      %th
+      %th
+
+  %tbody
+    - entries.each do |entry|
+      %tr
+        %td= "#{entry.contestant.name} #{entry.contestant.surname} #{entry.contestant.title}"
+        %td= entry.contest.name
+        %td= link_to 'Show', entry
+        %td= link_to 'Edit', edit_admin_entry_path(entry)
+        %td= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Entry', new_admin_entry_path

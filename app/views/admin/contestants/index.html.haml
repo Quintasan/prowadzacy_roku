@@ -1,0 +1,25 @@
+%h1 Listing contestants
+
+%table
+  %thead
+    %tr
+      %th Imię
+      %th Nazwisko
+      %th Tytuł
+      %th
+      %th
+      %th
+
+  %tbody
+    - contestants.each do |contestant|
+      %tr
+        %td= contestant.name
+        %td= contestant.surname
+        %td= contestant.title
+        %td= link_to 'Show', contestant
+        %td= link_to 'Edit', edit_admin_contestant_path(contestant)
+        %td= link_to 'Destroy', contestant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Contestant', new_admin_contestant_path

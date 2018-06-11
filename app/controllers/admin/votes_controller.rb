@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::VotesController < ApplicationController
+  before_action :authenticate_admin!
   expose :votes, -> { Vote.all }
   expose :vote
 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::FixturesController < ApplicationController
+  before_action :authenticate_admin!
   expose :fixtures, -> { Fixture.all }
   expose :fixture
 

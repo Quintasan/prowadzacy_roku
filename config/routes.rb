@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :admins
   root "application#root"
   get "/vote/:token", to: "vote#vote", as: :show_vote
   patch "/vote/:token", to: "vote#cast_vote", as: :cast_vote

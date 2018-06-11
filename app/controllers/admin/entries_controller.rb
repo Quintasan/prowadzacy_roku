@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::EntriesController < ApplicationController
+  before_action :authenticate_admin!
   expose :contestants, -> { Contestant.all }
   expose :contests, -> { Contest.active }
   expose :entries, -> { Entry.all }

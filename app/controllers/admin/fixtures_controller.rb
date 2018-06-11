@@ -18,7 +18,7 @@ class Admin::FixturesController < ApplicationController
     respond_to do |format|
       if fixture.save
         result = CreateNewContest.new(fixture).call
-        format.html { redirect_to fixture, notice: 'Fixture was successfully created.' }
+        format.html { redirect_to admin_fixture_path(fixture), notice: 'Fixture was successfully created.' }
         format.json { render :show, status: :created, location: fixture }
       else
         format.html { render :new }
@@ -30,7 +30,7 @@ class Admin::FixturesController < ApplicationController
   def update
     respond_to do |format|
       if fixture.update(fixture_params)
-        format.html { redirect_to fixture, notice: 'Fixture was successfully updated.' }
+        format.html { redirect_to admin_fixture_path(fixture), notice: 'Fixture was successfully updated.' }
         format.json { render :show, status: :ok, location: fixture }
       else
         format.html { render :edit }
@@ -42,7 +42,7 @@ class Admin::FixturesController < ApplicationController
   def destroy
     fixture.destroy
     respond_to do |format|
-      format.html { redirect_to fixtures_url, notice: 'Fixture was successfully destroyed.' }
+      format.html { redirect_to admin_fixtures_url, notice: 'Fixture was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -50,7 +50,8 @@ class Admin::FixturesController < ApplicationController
   private
     def fixture_params
       params.require(:fixture).permit(
-        :file
+        :file,
+        :students
       )
     end
 end

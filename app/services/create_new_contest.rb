@@ -1,16 +1,29 @@
 require "csv"
+require "pry"
+require "byebug"
 
 class ContestAlreadyCreated < StandardError; end
 
 class CreateNewContest
   def initialize(fixture)
-    @file = fixture.file
+    @fixture = fixture
   end
 
   def call
-    @file
+    contest = @fixture.file
       .yield_self { |it| convert_to_hash(it) }
       .yield_self { |it| build_contest(it) }
+    create_votes(contest)
+  end
+
+  def create_votes(contest)
+    spread = Roo::Excel.new(@fixture.students.storage.path(@fixture.students.id))
+    binding.pry
+    indexes = spread.map do |row|
+      value = row.first
+      next if value.is_a?(String)
+      value.round(0).to_s
+    end
   end
 
   def convert_to_hash(file)
@@ -59,5 +72,7 @@ class CreateNewContest
       contest.save!
       entries.each(&:save!)
     end
+
+    contest
   end
 end

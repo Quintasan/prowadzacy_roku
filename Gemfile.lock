@@ -166,7 +166,6 @@ GEM
       ast (~> 2.4.0)
     pg (1.0.0)
     popper_js (1.12.9)
-    power_assert (1.1.1)
     powerpack (0.1.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -174,9 +173,6 @@ GEM
     pry-byebug (3.6.0)
       byebug (~> 10.0)
       pry (~> 0.10)
-    pry-byebug-power_assert (0.1.1)
-      power_assert (>= 1.0.0)
-      pry-byebug
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (3.0.2)
@@ -227,6 +223,13 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     require_all (2.0.0)
+    roo (2.7.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
+    roo-xls (1.2.0)
+      nokogiri
+      roo (>= 2.0.0, < 3)
+      spreadsheet (> 0.9.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -251,10 +254,12 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-ole (1.2.12.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
+    rubyzip (1.2.1)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -274,6 +279,8 @@ GEM
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    spreadsheet (1.1.7)
+      ruby-ole (>= 1.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -338,13 +345,14 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   pry-byebug
-  pry-byebug-power_assert
   pry-rails
   puma (~> 3.11)
   pundit
   rails (~> 5.2.0)
   rails-i18n (~> 5.1)
   rails_best_practices
+  roo (~> 2.7.0)
+  roo-xls
   rspec-rails (~> 3.7)
   rubocop
   sass-rails (~> 5.0)

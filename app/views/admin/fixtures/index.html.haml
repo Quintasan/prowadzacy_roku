@@ -10,10 +10,10 @@
   %tbody
     - fixtures.each do |fixture|
       %tr
-        %td= link_to 'Show', fixture
-        %td= link_to 'Edit', edit_fixture_path(fixture)
-        %td= link_to 'Destroy', fixture, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', admin_fixtures_path(fixture)
+        %td= link_to 'Edit', edit_admin_fixture_path(fixture)
+        %td= link_to 'Destroy', admin_fixture_path(fixture), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Fixture', new_fixture_path
+= link_to 'New Fixture', new_admin_fixture_path

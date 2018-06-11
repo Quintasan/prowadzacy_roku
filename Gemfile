@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'shrine', '~> 2.0'
 gem 'rails-i18n', '~> 5.1'
+gem 'roo', '~> 2.7.0'
+gem 'roo-xls'
 
 group :development, :test do
   gem 'better_errors'
@@ -35,7 +37,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'pry-byebug-power_assert'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.7'
 end

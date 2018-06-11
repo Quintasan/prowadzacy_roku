@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require "csv"
 require "pry"
 require "byebug"
 
 class ContestAlreadyCreated < StandardError; end
+class EmptyIndexNumber < StandardError; end
 
 class CreateNewContest
   def initialize(fixture)
@@ -11,18 +14,33 @@ class CreateNewContest
 
   def call
     contest = @fixture.file
-      .yield_self { |it| convert_to_hash(it) }
-      .yield_self { |it| build_contest(it) }
+                      .yield_self { |it| convert_to_hash(it) }
+                      .yield_self { |it| build_contest(it) }
     create_votes(contest)
   end
 
   def create_votes(contest)
     spread = Roo::Excel.new(@fixture.students.storage.path(@fixture.students.id))
-    binding.pry
+
     indexes = spread.map do |row|
       value = row.first
       next if value.is_a?(String)
-      value.round(0).to_s
+      raise EmptyIndexNumber if value.eql?("")
+      value.round(0).to_s.last(6)
+    end
+
+    votes = indexes.map do |index|
+      Vote.new(
+        email: "#{index}@student.pwr.edu.pl",
+        entry: nil,
+        contest: contest
+      )
+
+      return :success
+    end
+
+    ActiveRecord::Base.transaction do
+      votes.each(&:save!)
     end
   end
 

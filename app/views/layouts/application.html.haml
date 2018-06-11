@@ -16,6 +16,7 @@
         %a.p-2.text-dark{href: admin_contestants_path}= t(".contestants")
         %a.p-2.text-dark{href: admin_entries_path}= t(".entries")
         %a.p-2.text-dark{href: admin_votes_path}= t(".votes")
+    = render partial: 'flash', flash: flash
     .container.mt-5
       .col-md-9.offset-md-1
         = yield

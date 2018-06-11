@@ -44,6 +44,13 @@ class Admin::ContestsController < ApplicationController
     end
   end
 
+  def send_votes
+    contest.votes.each do |vote|
+      VoteMailer.send_vote(vote: vote).deliver_now
+    end
+    redirect_to contests_url, notice: "Successfully sent messages"
+  end
+
   private
 
   def contest_params

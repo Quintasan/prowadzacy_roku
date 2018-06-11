@@ -1,18 +1,16 @@
+# frozen_string_literal: true
+
 class Admin::FixturesController < ApplicationController
   expose :fixtures, -> { Fixture.all }
   expose :fixture
 
-  def index
-  end
+  def index; end
 
-  def show
-  end
+  def show; end
 
-  def new
-  end
+  def new; end
 
-  def edit
-  end
+  def edit; end
 
   def create
     respond_to do |format|
@@ -48,10 +46,11 @@ class Admin::FixturesController < ApplicationController
   end
 
   private
-    def fixture_params
-      params.require(:fixture).permit(
-        :file,
-        :students
-      )
-    end
+
+  def fixture_params
+    params.require(:fixture).permit(
+      :file,
+      :students
+    )
+  end
 end

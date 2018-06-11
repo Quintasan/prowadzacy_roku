@@ -16,9 +16,9 @@
         %td= contestant.name
         %td= contestant.surname
         %td= contestant.title
-        %td= link_to 'Show', contestant
+        %td= link_to 'Show', admin_contestant_path(contestant)
         %td= link_to 'Edit', edit_admin_contestant_path(contestant)
-        %td= link_to 'Destroy', contestant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Destroy', admin_contestant_path(contestant), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

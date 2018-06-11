@@ -5,3 +5,7 @@ pl:
     required:
       text: 'wymagane'
       mark: '*'
+    labels:
+      vote:
+        entry:
+          "Wybierz prowadzącego na którego chcesz oddać głos:"

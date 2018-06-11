@@ -1,0 +1,8 @@
+%h1 Głosowanie na Prowadzącego Roku
+
+%p Z poniższej listy wybierz prowadzącego na którego chcesz zagłosować po czym wciśnij przycisk "Głosuj".
+
+= simple_form_for(user_vote, url: cast_vote_path(user_vote.token), method: :patch) do |f|
+  = f.input :token, as: :hidden, value: params[:token]
+  = f.input :entry, collection: entries
+  = f.button :submit, "Zagłosuj!", class: "btn btn-primary"

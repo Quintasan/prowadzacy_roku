@@ -7,14 +7,17 @@
       %th
       %th
       %th
+      %th
 
   %tbody
     - contests.each do |contest|
       %tr
         %td= contest.name
+        %td= link_to 'Send votes', admin_contest_send_votes_path(contest)
         %td= link_to 'Show', admin_contest_path(contest)
         %td= link_to 'Edit', edit_admin_contest_path(contest)
         %td= link_to 'Destroy', admin_contest_path(contest), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
 %br
 
 = link_to 'New Contest', new_admin_contest_path

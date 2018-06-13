@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require "csv"
-require "pry"
-require "byebug"
 
 class ContestAlreadyCreated < StandardError; end
 class EmptyIndexNumber < StandardError; end

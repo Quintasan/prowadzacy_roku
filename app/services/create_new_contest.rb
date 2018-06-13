@@ -33,8 +33,6 @@ class CreateNewContest
         entry: nil,
         contest: contest
       )
-
-      return :success
     end
 
     ActiveRecord::Base.transaction do

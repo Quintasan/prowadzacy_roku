@@ -94,7 +94,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
        :address => "smtp.gmail.com",
        :port => 587,
-       :user_name => ProwadzacyRoku::Application.credentials.email_user,
+       :user_name => ProwadzacyRoku::Application.credentials.email_login,
        :password => ProwadzacyRoku::Application.credentials.email_password,
        :authentication => :plain,
        :enable_starttls_auto => true

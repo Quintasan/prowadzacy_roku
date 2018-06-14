@@ -29,6 +29,8 @@ gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
+gem 'daemons'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'better_errors'

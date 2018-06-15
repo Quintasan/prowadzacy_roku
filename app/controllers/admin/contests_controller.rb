@@ -49,8 +49,8 @@ class Admin::ContestsController < ApplicationController
     contest.votes.in_groups_of(100, false).each do |group|
       group.each do |vote|
         SendVotingMailJob.perform_later(vote: vote)
-        sleep 1
       end
+      sleep 60
     end
     redirect_to contests_url, notice: "Successfully sent messages"
   end

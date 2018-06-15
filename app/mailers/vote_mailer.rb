@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class VoteMailer < ApplicationMailer
-  default from: "samorzad.iz@gmail.com"
+  default from: "samorzad.iz@pwr.edu.pl"
+
   def send_vote(vote:)
     @vote = vote
     mail(

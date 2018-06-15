@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
-  host: <%= ENV.fetch("DATABASE_HOST") { nil } %>
-  port: <%= ENV.fetch("DATABASE_PORT") { nil } %>
+  host: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
+  port: <%= ENV.fetch("DATABASE_PORT") { 5432 } %>
   user: <%= ENV.fetch("DATABASE_USER") { "prowadzacy_roku" } %>
   password: <%= ENV.fetch("DATABASE_PASSWORD") { "prowadzacy_roku" } %>
   encoding: unicode

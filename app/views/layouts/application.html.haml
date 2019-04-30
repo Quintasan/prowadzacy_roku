@@ -17,6 +17,10 @@
           %a.p-2.text-dark{href: admin_contestants_path}= t(".contestants")
           %a.p-2.text-dark{href: admin_entries_path}= t(".entries")
           %a.p-2.text-dark{href: admin_votes_path}= t(".votes")
+          = link_to t(".sign_out"), destroy_admin_session_path, method: :delete, class: "p-2 text-dark"
+      - else
+        %nav.my-2.my-md-0.mr-md-3
+          %a.p-2.text-dark{href: new_admin_session_path}= t(".sign_in")
     = render partial: 'flash', flash: flash
     .container.mt-5
       .col-md-9.offset-md-1

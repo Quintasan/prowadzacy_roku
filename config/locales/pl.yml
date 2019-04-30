@@ -1,7 +1,10 @@
+---
 pl:
   layouts:
     application:
-      contests: Konkursy
       contestants: Prowadzący
+      contests: Konkursy
       entries: Prowadzący w konkursach
+      sign_in: Zaloguj się
+      sign_out: Wyloguj
       votes: Głosy

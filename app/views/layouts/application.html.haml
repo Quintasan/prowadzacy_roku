@@ -13,6 +13,7 @@
       %h5.my-0.mr-md-auto.font-weight-normal Prowadzący Roku
       - if admin_signed_in?
         %nav.my-2.my-md-0.mr-md-3
+          %a.p-2.text-dark{href: admin_fixtures_path}= t(".fixtures")
           %a.p-2.text-dark{href: admin_contests_path}= t(".contests")
           %a.p-2.text-dark{href: admin_contestants_path}= t(".contestants")
           %a.p-2.text-dark{href: admin_entries_path}= t(".entries")

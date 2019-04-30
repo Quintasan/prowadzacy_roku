@@ -1,5 +1,10 @@
 ---
 pl:
+  devise:
+    sessions:
+      admin:
+        signed_in: "Pomyślnie zalogowano"
+        signed_out: "Pomyślnie wylogowano"
   layouts:
     application:
       contestants: Prowadzący

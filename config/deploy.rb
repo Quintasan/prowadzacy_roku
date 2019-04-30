@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lock "~> 3.11.0"
 set :application, "prowadzacy_roku"
 set :repo_url, "https://github.com/Quintasan/prowadzacy_roku"

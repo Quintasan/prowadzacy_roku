@@ -24,6 +24,7 @@ class CreateNewContest
       value = row.first
       next if value.is_a?(String)
       raise EmptyIndexNumber if value.eql?("")
+
       value.round(0).to_s.last(6)
     end
 
